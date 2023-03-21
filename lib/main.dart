@@ -1,15 +1,15 @@
 // import 'dart:io';
 import 'package:flutter/material.dart';
-// import 'package:http/http.dart' as http;
-// import 'package:xml/xml.dart' as xml;
-// import 'package:just_audio_background/just_audio_background.dart' as jab;
-// import 'package:intl/intl.dart';
 import 'package:get/get.dart';
+import 'package:meercast/controllers/subscriptions_controller.dart';
+import 'package:meercast/views/subscriptions_page.dart';
 
-import 'player.dart';
+// import 'player.dart';
+import './views/queue_page.dart';
+import './views/author_page.dart';
+import './controllers/author_controller.dart';
+import './controllers/queue_controller.dart';
 
-
-// import 'package:audio_video_progress_bar/audio_video_progress_bar.dart' as pb;
 
 void main() {
   runApp(PodcastPlayer());
@@ -20,15 +20,51 @@ class PodcastPlayer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Podcast Player',
-      initialRoute: "/",
+      initialRoute: "/queue",
+      navigatorKey: Get.key,
       getPages: [
-        GetPage(name: "/", page: () => QueuePage()),
-        GetPage(name: "/subscriptions", page: () => TestPage()),
-        GetPage(name: "/author", page: () => TestPage()),
+        GetPage(
+          name: "/subscriptions",
+          page: () => SubscriptionsPage(),
+          binding: SubscriptionsBinding(),
+          ),
+        GetPage(
+          name: "/author",
+          page: () => AuthorPage(),
+          binding: AuthorBinding(),
+        ),
+        GetPage(
+          name: '/queue',
+          page: () => QueuePage(),
+          binding: QueueBinding(),
+        ),
       ],
     );
   }
 }
+
+class QueueBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(QueueController(), permanent: true);
+  }
+}
+
+
+class SubscriptionsBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(SubscriptionsController(), permanent: true);
+  }
+}
+
+class AuthorBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.put(AuthorController(), permanent: true);
+  }
+}
+
 
 class TestPage extends StatelessWidget {
   const TestPage({super.key});
@@ -41,29 +77,32 @@ class TestPage extends StatelessWidget {
 
 
 
-class QueuePage extends StatelessWidget {
-  const QueuePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Title'),
-        actions: <Widget>[
-          TextButton(
-            // style: style,
-            onPressed: () {
-              Navigator.of(context).pushReplacementNamed('/login');
-            },
-            child: Text("main_message"),
-          ),
-        ],
-      ),
-      body: Placeholder(),
-      drawer: NavDrawer(),
-      );
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
