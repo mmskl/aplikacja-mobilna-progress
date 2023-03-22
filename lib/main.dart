@@ -1,14 +1,16 @@
 // import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:meercast/controllers/subscriptions_controller.dart';
-import 'package:meercast/views/subscriptions_page.dart';
 
-// import 'player.dart';
+// views
 import './views/queue_page.dart';
 import './views/author_page.dart';
+import './views/subscriptions_page.dart';
+
+// controllers
 import './controllers/author_controller.dart';
 import './controllers/queue_controller.dart';
+import './controllers/subscriptions_controller.dart';
 
 
 void main() {

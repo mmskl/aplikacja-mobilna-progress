@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import '../models/player_model.dart';
 import '../models/item_model.dart';
 
-class WithPlayerController extends GetxController {
+abstract class WithPlayerController extends GetxController {
   final player = PlayerModel().obs;
 
   void play_now(ItemModel im) {
