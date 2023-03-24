@@ -42,6 +42,22 @@ class MainDrawer extends StatelessWidget {
               Get.offNamed('/author');
             },
           ),
+          ListTile(
+            title: Text('player'), // @TODO: remove player from menu
+            tileColor: Get.currentRoute == '/player' ? Colors.grey[300] : null,
+            onTap: () {
+              Get.back();
+              Get.toNamed('/player');
+            },
+          ),
+          ListTile(
+            title: Text('player'), // @TODO 
+            tileColor: Get.currentRoute == '/player' ? Colors.grey[300] : null,
+            onTap: () {
+              Get.back();
+              Get.toNamed('/player');
+            },
+          ),
         ],
       ),
     );

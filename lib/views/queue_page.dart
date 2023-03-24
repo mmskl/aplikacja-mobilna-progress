@@ -41,16 +41,16 @@ class QueuePage extends GetView<QueueController> {
           Flexible(
             flex: 9,
             child: Expanded(
-                child: ListView.builder(
-                  itemCount: controller.queueCount.value,
-                  itemBuilder: ((context, i) {
-                    return ListTile(
-                      title: Text(controller.queueList.value[i].title),
-                      subtitle: Text(controller.queueList.value[i].author),
-                      trailing: IconButton(onPressed: () => controller.play(controller.queueList.value[i].id), icon: Icon(Icons.play_arrow)),
-                    );
-                  }))
-                ),
+              child: ListView.builder(
+                itemCount: controller.queueCount.value,
+                itemBuilder: ((context, i) {
+                  return ListTile(
+                    title: Text(controller.queueList.value[i].title),
+                    subtitle: Text(controller.queueList.value[i].author),
+                    trailing: IconButton(onPressed: () => controller.play(controller.queueList.value[i].id), icon: Icon(Icons.play_arrow)),
+                  );
+                }))
+            ),
 
             // ,
           ),
@@ -62,11 +62,11 @@ class QueuePage extends GetView<QueueController> {
                 // AudioControls(),
               ],
             )
-            ),
-        ],
-      )
+          ),
+          ]),
       );
   }
+}
 
 
 
