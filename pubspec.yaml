@@ -1,5 +1,5 @@
-name: meercast
-description: A new Flutter project.
+name: ADiOSPod
+description: Aplikacja DO Słuchania PODcastów
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -33,16 +33,19 @@ dependencies:
     sdk: flutter
   # audioplayers: ^3.0.1
   # audioplayers: ^2.0.0
-  http: ^0.13.3
+  http: ^0.13.5
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  xml: ^6.1.0
+  xml: ^5.0.2
   just_audio: ^0.9.31
-  intl: ^0.18.0
   just_audio_background: ^0.0.1-beta.9
+  rxdart: ^0.27.7
+  audio_video_progress_bar: ^1.0.0
+  get: ^4.6.5
+  dart_rss: ^2.0.1
 
 dev_dependencies:
   flutter_test:
