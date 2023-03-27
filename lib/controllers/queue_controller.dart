@@ -9,13 +9,13 @@ class QueueController extends WithPlayerController {
   Rx<List<ItemModel>>queueList = Rx<List<ItemModel>>([]);
   Rx<int> queueCount = 0.obs;
 
-  void addToQueueList(String title, String author, String url) {
+  void addToQueueList(String title, String author, String audioUrl) {
 
     var q = ItemModel(
         id: Uuid(),
         title: title,
         author: author,
-        url: url,
+        audioUrl: audioUrl,
       );
 
     this.queueList.value.add(q);
@@ -36,5 +36,4 @@ class QueueController extends WithPlayerController {
     print(_queueItem.toString());
     this.play_now(_queueItem);
   }
-
 }

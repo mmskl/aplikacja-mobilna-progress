@@ -19,14 +19,14 @@ class PlayerController extends getx.GetxController {
       title: 'Episode 1',
       author: 'John Doe',
       description: 'The first episode of our podcast',
-      url: 'https://raportostanieswiata.pl/wp-content/uploads/2023/03/lit_mishimaslonce_13-03-23.mp3',
+      audioUrl: 'https://raportostanieswiata.pl/wp-content/uploads/2023/03/lit_mishimaslonce_13-03-23.mp3',
       pubDate: DateTime.parse('2023-02-10 10:18:04Z'),
     ),
     ItemModel(
       title: 'Episode 2',
       author: 'Jane Smith',
       description: 'The second episode of our podcast',
-      url: 'https://raportostanieswiata.pl/wp-content/uploads/2022/12/lit_oz_naziemiizraela_14-11-22.mp3',
+      audioUrl: 'https://raportostanieswiata.pl/wp-content/uploads/2022/12/lit_oz_naziemiizraela_14-11-22.mp3',
       pubDate: DateTime.parse('2023-01-20 20:18:04Z')
     ),
   ].obs;
@@ -66,7 +66,7 @@ class PlayerController extends getx.GetxController {
 
   void play() {
     if(audioPlayer.currentIndex == null) {
-      this.audioPlayer.setUrl(this.currentlyPlaying.value.url);
+      this.audioPlayer.setUrl(this.currentlyPlaying.value.audioUrl);
     }
     this.audioPlayer.play();
     this.updateProgressBar();
@@ -82,7 +82,7 @@ class PlayerController extends getx.GetxController {
 
 
     this.currentlyPlaying.value.isPlaying = true;
-    this.audioPlayer.setUrl(item.url);
+    this.audioPlayer.setUrl(item.audioUrl);
     if (this.currentlyPlaying.value.length == null) {
       this.currentlyPlaying.value.length = this.audioPlayer.duration;
     }
